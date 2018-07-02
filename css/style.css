@@ -342,7 +342,10 @@ main .main-content .row .right-section .image-wrapper {
     text-align: right;
     margin-right: 20%;
 }
-
+main .main-content .row .left-section .image-wrapper img{
+    height: auto;
+    width: auto;
+}
 main .main-content .row .right-section .form-wrapper .tab {
     max-width: 410px;
     height: auto;
@@ -492,7 +495,7 @@ footer .footer-text-wrapper p {
 
 /* Media Queries */
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     h1 {
         font-size: 34px;
     }
