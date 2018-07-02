@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CASINO.COM</title>
+    <link rel="preload" href="images/background-header.png" as="image">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -49,7 +50,7 @@
                 <div class="right-section float-left">
                     <div class="form-wrapper form-wrapper-anim float-right">
                         <div class="tab">
-                            <form id="reg-form" action="">
+                            <form id="reg-form">
                                 <h3>Sing up</h3>
                                 <p class="sing-up-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                                 <p>
@@ -65,7 +66,7 @@
                                     <input placeholder="Confirm Password" type="password" oninput="this.className = ''" name="pwordconf" required>
                                 </p>
                                 <div class="sing-up-check-box">
-                                    <input type="checkbox" id="terms-of-use" required />
+                                    <input type="checkbox" id="terms-of-use" name="terms" required />
                                     <span id="terms-of-use-placeholder">You agree to our Terms and Policy.</span>
                                 </div>
                                 <button type="button" id="submit-button">Join now</button>
@@ -101,11 +102,11 @@
                                 </p>
                                 <div class="sing-up-check-box">
                                     <p>
-                                        <input type="checkbox" id="bonus-code" /> </p>
+                                        <input type="checkbox" id="bonus-code" name="bonus-code" /> </p>
                                     <p class="sing-up-text">Do you have a bonus code?</p>
                                 </div>
                                 <p>
-                                    <input type="text" id="bonus-code-input" class="hidden" placeholder="Bonus code" oninput="this.className = ''" name="bonus-code-input">
+                                    <input type="text" id="bonus-code-input" class="hidden" placeholder="Bonus code" oninput="this.className = ''" name="bonus-code-value">
                                 </p>
                                 <button type="button" id="submit-button-finish">Finish</button>
                             </form>
@@ -170,7 +171,8 @@
         </div>
     </footer>
     <!-- LIBRARIES -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
     <!-- SCRIPTS -->
     <script src="js/main.js"></script>
 </body>

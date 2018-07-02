@@ -1,6 +1,3 @@
-var currentTab = 0;
-showTab(currentTab);
-
 var termsOfUse = document.querySelector('#terms-of-use');
 var isCheckedTermsOfUse = termsOfUse.checked;
 var bonusCodeCheckbox = document.querySelector('#bonus-code');
@@ -9,11 +6,12 @@ var bonusCodeInput = document.querySelector('#bonus-code-input');
 var submitRegForm = document.querySelector('#submit-button');
 var continueRegistration = document.querySelector('#continue-registration');
 var finishRegistration = document.querySelector('#submit-button-finish');
+const userOrder = {};
+const userDetailData = {};
+var currentTab = 0;
 
-function showTab(n) {
-    var x = document.getElementsByClassName("tab");
-    x[n].style.display = "block";
-}
+showTab(currentTab);
+
 
 termsOfUse.addEventListener('click', function(e) {
     if (isCheckedTermsOfUse == false) {
@@ -39,13 +37,10 @@ submitRegForm.addEventListener('click', function(e) {
     var isFormValid = validateRegForm();
     if (!isFormValid) {
         return false;
-    }   
-    $('reg-form').submit(function() {
-        $.post($(this).attr('action'), $(this).serialize(), function(response) {
+    } 
 
-        }, 'json');
-        return false;
-    });
+    document.querySelector('#reg-form').addEventListener("submit", getValues());
+    
     nextStep();
 });
 
@@ -58,14 +53,16 @@ finishRegistration.addEventListener('click', function(e) {
 	if (!isFormValid) {
         return false;
     }
-    $('detail-form').submit(function() {
-        $.post($(this).attr('action'), $(this).serialize(), function(response) {
 
-        }, 'json');
-        return false;
-    });
+    document.querySelector('#detail-form').addEventListener("submit", getDetailData());
+
     nextStep();
 });
+
+function showTab(n) {
+    var x = document.getElementsByClassName("tab");
+    x[n].style.display = "block";
+}
 
 function nextStep() {
     var x = document.getElementsByClassName("tab");    
@@ -114,8 +111,7 @@ function validateRegForm() {
 			    }  
     		}    		
         }         
-    }  	
-    	
+    }  	    	
 	if (isCheckedTermsOfUse == false) {
 		var termsOfUsePlaceholder = document.getElementById("terms-of-use-placeholder");
     	termsOfUsePlaceholder.classList.add("mandatory");
@@ -123,6 +119,20 @@ function validateRegForm() {
     }
     return valid; 
 }
+
+function getValues(e) {
+
+    var elements = document.querySelectorAll('#reg-form input');
+
+    for (i = 0; i < elements.length-1; i++) {
+        if (elements[i].type !== "submit") {
+          userOrder[elements[i].name] = elements[i].value;
+        }
+    }
+
+    localStorage.setItem('userOrder', JSON.stringify(userOrder));
+    console.log(JSON.stringify(userOrder));
+}  
 
 function validateDetailedRegForm() {
    var regForm, regFormInputs, i, valid = true;
@@ -136,3 +146,17 @@ function validateDetailedRegForm() {
     }  	
     return valid; 
 }
+
+function getDetailData(e) {
+
+    var elements = document.querySelectorAll('#detail-form input');
+
+    for (i = 0; i < elements.length-1; i++) {
+        if (elements[i].type !== "submit") {
+          userDetailData[elements[i].name] = elements[i].value;
+        }
+    }
+
+    localStorage.setItem('userDetailData', JSON.stringify(userDetailData));
+    console.log(JSON.stringify(userDetailData));
+}  

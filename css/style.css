@@ -374,7 +374,7 @@ main .main-content .row .right-section .form-wrapper .tab h3 {
 
 main .main-content .row .right-section .form-wrapper .tab p.sing-up-text {
     padding: 20px 0;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 main .main-content .row .right-section .form-wrapper form input,
@@ -620,13 +620,13 @@ footer .footer-text-wrapper p {
 /* Keyframes */
 @media only screen and (min-width: 601px) {
   @keyframes form-wrapper-anim {
-    0% {transform: translateY(-1000px);}
+    0% {transform: translateY(-100%);}
     100% {transform: translateX(0);  opacity: 1;}
   }
 }
 @media only screen and (max-width: 600px) {
   @keyframes form-wrapper-anim {
-    0% {transform: translateX(-1000px);}
+    0% {transform: translateX(-100%);}
     100% {transform: translateX(0);  opacity: 1;}
   }
 }
