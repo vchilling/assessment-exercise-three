@@ -69,6 +69,7 @@ function nextStep() {
     x[currentTab].style.display = "none";
     currentTab = currentTab + 1;
     showTab(currentTab);
+    smoothscroll();
 }
 
 function validateRegForm() {
@@ -158,3 +159,11 @@ function getDetailData(e) {
 
     localStorage.setItem('userDetailData', JSON.stringify(userDetailData));
 }  
+
+function smoothscroll() {
+    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentScroll > 0) {
+         window.requestAnimationFrame(smoothscroll);
+         window.scrollTo (0,currentScroll - (currentScroll/5));
+    }
+};
