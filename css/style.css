@@ -340,7 +340,7 @@ main .main-content .row .right-section .form-wrapper,
 main .main-content .row .right-section .image-wrapper {
     width: auto;
     text-align: right;
-    margin-right: 20%;
+    margin-right: 30%;
 }
 main .main-content .row .left-section .image-wrapper img{
     height: auto;
@@ -494,8 +494,7 @@ footer .footer-text-wrapper p {
 
 
 /* Media Queries */
-
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 2000px) {
     h1 {
         font-size: 34px;
     }
@@ -508,21 +507,15 @@ footer .footer-text-wrapper p {
     h4 {
         font-size: 14px;
     }
-    header * {
-        font-size: 12px;
+   
+    header {
+        height: 60px;
     }
     header .top-navigation nav ul li a img {
         max-height: 24px;
     }
-    header #login-wrapper {
-        padding: 12px 10px 0;
-    }
-    header #login-wrapper a {
-        font-size: 30px;
-        line-height: 1;
-    }
-    header #login-wrapper a span {
-        display: none;
+    header .logo-wrapper a img {
+        max-height: 32px;
     }
     header .logo-wrapper {
         padding-left: 20px;
@@ -530,6 +523,47 @@ footer .footer-text-wrapper p {
     header .logo-wrapper a img {
         max-height: 30px;
     }
+    main .related-articles {
+        margin: 0 10%;
+    }
+    main .main-content .row .right-section .form-wrapper .tab {
+        max-width: 340px;
+    }
+    main .main-content .row .left-section .image-wrapper img {
+        max-height: 350px;
+    }
+    main .main-content .row .right-section .image-wrapper img {
+        max-height: 120px;
+    }
+    main .main-content .row .right-section .form-wrapper .tab p.sing-up-text {
+        padding: 5px 0;
+        font-size: 13px;
+    }
+    main .main-content .row .right-section .form-wrapper form input {
+        font-size: 14px;
+        height: 35px;
+        margin: 5px 0;
+    }
+    main .main-content .row .right-section .form-wrapper form button,
+    main .main-content .row .right-section .form-wrapper .tab a.btn {
+        padding: 15px;
+    }
+    footer .footer-text-wrapper p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {    
+    header #login-wrapper {
+        padding: 12px 10px 0;
+    }    
+    header #login-wrapper a {
+        font-size: 30px;
+        line-height: 1;
+    }
+    header #login-wrapper a span {
+        display: none;
+    }    
     main .main-content .row .left-section .offer-wrapper,
     main .main-content .row .left-section .image-wrapper,
     main .main-content .row .right-section .form-wrapper {
@@ -537,18 +571,7 @@ footer .footer-text-wrapper p {
     }
     main .main-content .row .right-section .image-wrapper {
         display: none;
-    }
-    main .main-content .row .right-section .form-wrapper .tab p.sing-up-text {
-        padding: 5px 0;
-    }
-    main .main-content .row .right-section .form-wrapper form input {
-        font-size: 14px;
-        height: 35px;
-    }
-    main .main-content .row .right-section .form-wrapper form button,
-    main .main-content .row .right-section .form-wrapper .tab a.btn {
-        padding: 15px;
-    }
+    }    
     main .related-articles a {
         max-width: 20%;
     }
@@ -558,10 +581,7 @@ footer .footer-text-wrapper p {
     footer div.brand-warpper,
     footer div.footer-text-wrapper {
         width: 90%;
-    }
-    footer .footer-text-wrapper p {
-        font-size: 12px;
-    }
+    }    
 }
 
 @media only screen and (max-width: 600px) {
