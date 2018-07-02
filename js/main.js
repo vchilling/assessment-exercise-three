@@ -131,7 +131,6 @@ function getValues(e) {
     }
 
     localStorage.setItem('userOrder', JSON.stringify(userOrder));
-    console.log(JSON.stringify(userOrder));
 }  
 
 function validateDetailedRegForm() {
@@ -158,5 +157,4 @@ function getDetailData(e) {
     }
 
     localStorage.setItem('userDetailData', JSON.stringify(userDetailData));
-    console.log(JSON.stringify(userDetailData));
 }  
